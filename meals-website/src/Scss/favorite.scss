@@ -1,0 +1,51 @@
+
+
+.favorities {
+    min-height: 100px;
+    min-width: 100%;
+    background-color: black;
+    text-align: start;
+    max-height: fit-content;
+    padding: 1rem 0;
+    box-sizing: border-box;
+
+    p {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 2rem 0;
+        margin-left: 3rem;
+    }
+
+    .grid {
+        min-width: 100%;
+        min-height: 200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+        justify-content: center;
+        place-items: center;
+
+        margin: 0 3rem;
+        color: white;
+        gap: 1rem;
+    
+
+
+        .item {
+            display: grid;
+            place-items: center;
+            img {
+                height: 70px;
+                width: 70px;
+                border-radius: 100%;
+            }
+
+            span {
+                padding:5px 0;
+                color: white;
+                font-size: 14px;
+                font-weight: 100;
+            }
+        }
+    }
+}
