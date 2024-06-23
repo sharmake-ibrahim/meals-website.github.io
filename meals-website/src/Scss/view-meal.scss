@@ -1,0 +1,93 @@
+
+$table-view: 820px;
+
+@mixin table {
+    @media (min-width: #{$table-view}) {
+        @content;
+    }
+}
+
+
+
+
+section {
+    min-height: 70vh;
+    min-width: 100%;
+    display: flex;
+    padding-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include table() {
+        flex-direction: row;
+
+    }
+
+    .img-container {
+        max-height: 300px;
+        max-width: 500px;
+
+        
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .details {
+        min-height: 300px;
+        max-width: 500px;
+        color: black;
+        font-size: 1rem;
+        padding: 1rem;
+        background-color: white;
+
+       
+    }
+
+
+    h1 {
+        padding: 10px 0;
+        font-size: clamp(1rem, 3vw, 2rem);
+      
+    }
+
+
+    article {
+        display: grid;
+        row-gap: 1rem;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .underline {
+            text-decoration: underline;
+            color: black;
+        }
+
+        p {
+            line-height: 1.2;
+        }
+    }
+   
+
+    .close-btn {
+        height: 25px;
+        width: 100px;
+        // padding: 4px;
+        background-color: red;
+        border-radius: 5rem;
+        display: grid;
+        place-items: center;
+    }
+
+
+    .txt {
+        p {
+            padding: 15px 10px;
+            text-transform: initial;
+        }
+    }
+}
+
