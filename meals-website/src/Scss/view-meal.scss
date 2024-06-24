@@ -15,33 +15,40 @@ section {
     min-width: 100%;
     display: flex;
     padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 1rem;
     @include table() {
+        align-items: center;
         flex-direction: row;
 
     }
 
     .img-container {
-        max-height: 300px;
+        min-height: 500px;
         max-width: 500px;
+        
 
         
         img {
             max-width: 100%;
+            min-height: 300px;
+            border-radius: 5px;
         }
     }
 
     .details {
-        min-height: 300px;
+        min-width: 300px;
         max-width: 500px;
         color: black;
         font-size: 1rem;
         padding: 1rem;
+        font-size: 15px;
         background-color: white;
-
-       
+        border-radius: 5px;
     }
 
 

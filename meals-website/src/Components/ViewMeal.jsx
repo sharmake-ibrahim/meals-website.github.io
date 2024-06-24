@@ -1,23 +1,33 @@
-import { Link } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { UserMeals } from "../App";
 const ViewMeal = ()=> {
+    const MealDetail = useContext(UserMeals)
+            // console.log(MealDetail);
+    const parms = useParams();
+    console.log(parms);
+        const MealInfo = MealDetail.find( (item)=> item.idMeal === parms.id);
+        console.log("Meal info from find method", MealInfo)
+        
+        const {idMeal, strInstructions, strMealThumb, strMeal, strSource} = MealInfo;
+
     return(
         <section>
-            <div className="img-container">
-                <img src="https://foodtank.com/wp-content/uploads/2017/01/IF-Burger-1-1024x772.jpg" alt="food" />
+            <div className="img-container" key={idMeal}>
+                <img src={strMealThumb} alt= {strMeal} />
             </div>
 
             <div className="details">
                         <div className="txt">
-                                <h1>Hamburger</h1>
+                                <h1>{strMeal}</h1>
                                 <p> cooking instructions</p>
                         </div>
             
 
                         <article>
                   
-                        <p>A hamburger is often accompanied by side dishes such as French fries, onion rings, coleslaw, or a salad. It is a versatile dish that can be customized to individual tastes and preferences, making it a staple in many cuisines worldwide.</p>
-                        <a className="underline" href="https://github.com/sharmake-ibrahim" target="_blank">Original Source</a>
+                        <p> {strInstructions}</p>
+                        <a className="underline" href={strSource} target="_blank">Original Source</a>
                         <Link  className="close-btn"   to="/">Close</Link>
                     </article>
 
